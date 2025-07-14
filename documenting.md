@@ -1,3 +1,6 @@
+# AWS IAM Privilege Escalation Lab
+This lab simulates an AWS IAM privilege escalation exploit, demonstrating how misconfigured policies can lead to full admin access. It includes setup, attack simulation, detection via CloudTrail, and remediation steps. 
+
 ## 🔍 Phase 1: IAM Lab Setup — Creating the Misconfigured Environment
 
 In this first phase, I set up the foundation for the privilege escalation simulation. The goal is to create two IAM users:
@@ -157,20 +160,28 @@ This helps during forensic investigations and timeline correlation.
 
 ---
 
-### ✅ Step 3: Search in Splunk
+---
 
-Since CloudTrail logs were forwarding to Splunk, I ran this SPL query:
+### ✅ Step 4: AWS GuardDuty Detection
 
-```spl
-index=aws source="*:cloudtrail" eventName="AttachUserPolicy"
-```
+As an additional detection mechanism, I enabled **GuardDuty** — AWS’s threat detection service — to monitor for suspicious IAM activity.
 
-✅ Splunk returned the privilege escalation event from `LimitedUser`.
+📸 Screenshot: GuardDuty alerts triggered from `LimitedUser`  
+<img width="1920" height="1010" alt="image" src="https://github.com/user-attachments/assets/6d806c73-787b-4019-8f8e-a881df5731c9" />
 
-📸 Screenshot: Splunk showing the event  
-*Insert screenshot if available*
+
+Findings included:
+
+- 🔴 **Critical** — Potential credential compromise of `IAMUser/LimitedUser`
+- 🟠 **Medium** — S3 `GetObject` and `ListObjects` calls from remote host (Kali Linux)
+- 🟡 **Low** — Root credential usage
+
+This validates that **GuardDuty effectively caught the privilege escalation** and anomalous behavior during the lab.
+
+✅ GuardDuty adds an **automated detection layer** alongside CloudTrail and Splunk.
 
 ---
+
 
 ## 🛡️ Phase 4: Remediation — Fixing the Misconfiguration
 
