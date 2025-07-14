@@ -4,6 +4,8 @@ This project simulates a real-world AWS IAM privilege escalation scenario. I del
 
 ---
 
+---
+
 ## 🧠 Objective
 
 - Simulate IAM misconfiguration that enables **privilege escalation**  
@@ -75,9 +77,6 @@ This project simulates a real-world AWS IAM privilege escalation scenario. I del
 - How a simple policy misconfiguration can lead to full compromise  
 - How GuardDuty effectively detects privilege escalation attempts  
 - Leveraging Lambda for automated alert handling  
-
----
-
 ---
 
 ## 💭 Future Improvements
@@ -87,7 +86,7 @@ This project simulates a real-world AWS IAM privilege escalation scenario. I del
 - Integrate findings with AWS Security Hub  
 
 ---
-
+[📄 Full Documentation (CHECK ME)](https://github.com/jmcoded0/AWS-IAM-Privilege-Escalation-Detection-Lab/blob/main/documenting.md)
 ## 🙋🏽‍♂️ Author
 
 **Johnson Mathew**  
