@@ -1,4 +1,4 @@
-# 🔐 AWS IAM Privilege Escalation & Detection Lab
+# 🔐 AWS IAM Privilege Escalation Detection
 
 This project simulates a real-world AWS IAM privilege escalation scenario. I deliberately created a misconfigured IAM environment, escalated privileges from a low-level user, and detected the attack using AWS native tools like **CloudTrail**, **GuardDuty**, and **Lambda**. The goal: understand IAM policy weaknesses, simulate attacker behavior, and build a basic detection pipeline.
 
@@ -60,17 +60,6 @@ This project simulates a real-world AWS IAM privilege escalation scenario. I del
 
 ---
 
-## 🖼️ Screenshots
-
-> 📸 Include screenshots for:  
-> - IAM policy configuration  
-> - CLI commands used  
-> - CloudTrail event logs  
-> - GuardDuty alerts  
-> - Lambda function configuration  
-
----
-
 ## 🧠 Lessons Learned
 
 - Importance of applying least privilege in IAM policies  
@@ -86,7 +75,7 @@ This project simulates a real-world AWS IAM privilege escalation scenario. I del
 - Integrate findings with AWS Security Hub  
 
 ---
-[📄 Full Documentation (CHECK ME)](https://github.com/jmcoded0/AWS-IAM-Privilege-Escalation-Detection-Lab/blob/main/documenting.md)
+[📄 Full Documentation (CHECK ME)](https://github.com/jmcoded0/AWS-IAM-Privilege-Escalation-Detection/blob/main/documenting.md)
 ## 🙋🏽‍♂️ Author
 
 **Johnson Mathew**  
